@@ -1,0 +1,16 @@
+{
+  "name": "rc-app-script",
+  "version": "1.0.0",
+  "main": "watcher.js",
+  "scripts": {
+    "start": "tsc && node dist/watcher.js",
+    "dev": "tsc -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/child-process-promise": "^2.2.6",
+    "chokidar": "^3.6.0"
+  }
+}
