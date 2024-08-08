@@ -15,6 +15,8 @@ const COMMAND_TEMPLATE =
 let commandQueue: { command: string; filePath: string }[] = [];
 let isProcessing = false;
 const dot = " •    ";
+const tick = "✓";
+const cross = "✖";
 
 // Debounced function to process the command queue
 const processQueue = debounce(() => {
@@ -41,10 +43,10 @@ const processQueue = debounce(() => {
       console.log(dot, colors.green("Uploading App..."));
     } else if (output.includes("Packaging the app")) {
       console.log(dot, colors.green("Packaging the App..."));
-    } else if (output.includes("✓")) {
-      console.log(dot, colors.green("✓"));
-    } else if (output.includes("✖")) {
-      console.log(dot, colors.red("✖"));
+    } else if (output.includes(tick)) {
+      console.log(dot, colors.green(tick));
+    } else if (output.includes(cross)) {
+      console.log(dot, colors.red(cross));
     } else {
       console.log("      ", colors.red(output));
     }
