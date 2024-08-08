@@ -24,6 +24,10 @@
 
 </div>
 
+### Demo
+
+![alt text](https://github.com/[VipinDevelops]/[Booster.RC]/blob/[main]/image.jpg?raw=true)
+
 ### ✅ About The Project
 
 This project automates the deployment process for Rocket.Chat apps by monitoring a specified directory for changes. It utilizes `chokidar` for file watching and the Rocket.Chat Apps CLI to handle deployments. The script provides real-time feedback on the deployment status, ensuring efficient and streamlined updates to your Rocket.Chat apps.
