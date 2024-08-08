@@ -26,7 +26,9 @@
 
 ### Demo
 
-![alt text](https://github.com/[VipinDevelops]/[Booster.RC]/blob/[main]/image.jpg?raw=true)
+![ss ](https://github.com/VipinDevelops/Booster.RC/blob/main/public/S1.png?raw=true)
+
+![ss](https://github.com/VipinDevelops/Booster.RC/blob/main/public/S2.png?raw=true)
 
 ### ✅ About The Project
 
