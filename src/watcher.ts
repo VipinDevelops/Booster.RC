@@ -2,13 +2,29 @@ import chokidar from "chokidar";
 import { exec } from "child_process";
 import colors from "colors";
 import debounce from "lodash/debounce";
+import readline from "readline";
 
-// Path to the directory to watch
-const WATCH_DIRECTORY =
-  "/home/vipin/Desktop/opensource/Apps/Rocket.Chat.Welcome.App";
+// Create readline interface
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+// Function to prompt user for watch directory
+const promptForWatchDirectory = () => {
+  return new Promise<string>((resolve) => {
+    rl.question("Please specify the directory to watch: ", (dir) => {
+      resolve(dir);
+      rl.close();
+    });
+  });
+};
+
+// Path to the directory to watch (will be set by user)
+let WATCH_DIRECTORY: string;
 
 // Command template to run when a change is detected
-const COMMAND_TEMPLATE =
+const RUN_COMMAND =
   "rc-apps deploy --url http://localhost:3000 --username vipin.chaudhary --password VipinDev";
 
 // Command queue and processing state
@@ -69,20 +85,28 @@ const processQueue = debounce(() => {
   });
 }, 3000);
 
-chokidar
-  .watch(WATCH_DIRECTORY, {
-    persistent: true,
-    ignored: (filePath) =>
-      filePath.includes("dist/") ||
-      filePath.endsWith(".git") ||
-      filePath.endsWith(".json"),
-  })
-  .on("change", (filePath) => {
-    if (commandQueue.length <= 3) {
-      commandQueue.push({ command: COMMAND_TEMPLATE, filePath });
-      processQueue();
-    }
-  })
-  .on("error", (error) => {
-    console.error(colors.red(`Watcher error: ${error.message}`));
-  });
+// Main function to set up the watcher
+const main = async () => {
+  WATCH_DIRECTORY = await promptForWatchDirectory();
+  console.log(colors.green("Watching " + WATCH_DIRECTORY));
+  chokidar
+    .watch(WATCH_DIRECTORY, {
+      persistent: true,
+      ignored: (filePath) =>
+        filePath.includes("dist/") ||
+        filePath.endsWith(".git") ||
+        filePath.endsWith(".json"),
+    })
+    .on("change", (filePath) => {
+      if (commandQueue.length <= 3) {
+        commandQueue.push({ command: RUN_COMMAND, filePath });
+        processQueue();
+      }
+    })
+    .on("error", (error) => {
+      console.error(colors.red(`Watcher error: ${error.message}`));
+    });
+};
+
+// Start the main function
+main();
