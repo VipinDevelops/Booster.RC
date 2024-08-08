@@ -22,9 +22,9 @@ const prompt = (question: string): Promise<string> => {
 // Setup the file watcher and command execution
 const setupWatcher = async () => {
   const watchDirectory = await prompt(
-    "Please specify the directory to watch: "
+    "Provide the RocketChat App directory to watch: "
   );
-  const url = await prompt("Please enter the URL: ");
+  const url = await prompt("Please enter the Server Url: ");
   const cleanedUrl = url.endsWith("/") ? url.slice(0, -1) : url;
   const username = await prompt("Please enter the username: ");
   const password = await prompt("Please enter the password: ");
