@@ -2,14 +2,15 @@
 
 <br />
 <div align="center">
+    <img src="https://cdn-icons-png.flaticon.com/128/2482/2482878.png">
   <h3 align="center">Development Mode with Hot Reload for Rocket.Chat Apps</h3>
 
   <p align="center">
-    <a href="https://github.com/yourusername/rocketbooster">View Demo</a>
+    <a href="https://github.com/VipinDevelops/Booster.RC">View Demo</a>
     ·
-    <a href="https://github.com/yourusername/rocketbooster/issues">Report Bug</a>
+    <a href="https://github.com/VipinDevelops/Booster.RC/issues">Report Bug</a>
     ·
-    <a href="https://github.com/yourusername/rocketbooster/issues">Request Feature</a>
+    <a href="https://github.com/VipinDevelops/Booster.RC/issues">Request Feature</a>
   </p>
 </div>
 
@@ -22,6 +23,15 @@
 [![MIT License][license-shield]][license-url]
 
 </div>
+
+### ✅ About The Project
+
+This project automates the deployment process for Rocket.Chat apps by monitoring a specified directory for changes. It utilizes `chokidar` for file watching and the Rocket.Chat Apps CLI to handle deployments. The script provides real-time feedback on the deployment status, ensuring efficient and streamlined updates to your Rocket.Chat apps.
+
+### 🚀 Usage
+
+- **Starting the Watcher**: Execute the script to begin monitoring the directory for changes.
+- **Handling File Changes**: The script automatically triggers the deployment command upon detecting file modifications.
 
 ## 📜 Getting Started
 
@@ -41,11 +51,11 @@
 
 1. **Clone the repository**
    ```sh
-   git clone https://github.com/VipinDevelops/Booster.RC
+   git clone git@github.com:VipinDevelops/Booster.RC.git
    ```
 2. **Navigate to the project directory**
    ```sh
-   cd rocket-chat-deployment-automation
+   cd Booster.RC
    ```
 3. **Install dependencies**
 
@@ -56,7 +66,7 @@
 4. **Run the script**
 
    ```sh
-   node index.js
+   npm run start
    ```
 
    The script will prompt you for the following inputs:
@@ -65,15 +75,6 @@
    - Server URL
    - Username
    - Password
-
-### ✅ About The Project
-
-This project automates the deployment process for Rocket.Chat apps by monitoring a specified directory for changes. It utilizes `chokidar` for file watching and the Rocket.Chat Apps CLI to handle deployments. The script provides real-time feedback on the deployment status, ensuring efficient and streamlined updates to your Rocket.Chat apps.
-
-### 🚀 Usage
-
-- **Starting the Watcher**: Execute the script to begin monitoring the directory for changes.
-- **Handling File Changes**: The script automatically triggers the deployment command upon detecting file modifications.
 
 ### 🧑‍💻 Contributing
 
@@ -98,10 +99,7 @@ Here are some helpful resources for Rocket.Chat apps and deployment:
   - [App Requests](https://forums.rocket.chat/c/rocket-chat-apps/requests)
   - [App Guides](https://forums.rocket.chat/c/rocket-chat-apps/guides)
   - [Top View of Both Categories](https://forums.rocket.chat/c/rocket-chat-apps)
-- [#rocketchat-apps on Open.Rocket.Chat](https://open.rocket.chat/channel/rocketchat-apps)
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+- [Open.Rocket.Chat](https://open.rocket.chat)
 
 [contributors-shield]: https://img.shields.io/github/contributors/VipinDevelops/Booster.RC?style=for-the-badge
 [contributors-url]: https://github.com/VipinDevelops/Booster.RC/graphs/contributors

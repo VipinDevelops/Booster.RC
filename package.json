@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "watcher.js",
   "scripts": {
-    "start": "tsc && node dist/watcher.js",
-    "dev": "tsc -w"
+    "start": "tsc && node dist/watcher.js"
   },
   "author": "",
   "license": "ISC",
